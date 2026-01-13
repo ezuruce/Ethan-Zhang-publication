@@ -2,34 +2,265 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Paper Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethan Zhang - Palo Alto High School</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(30px, 30px); }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact {
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255,255,255,0.5);
+            transition: border-color 0.3s;
+        }
+
+        .contact a:hover {
+            border-bottom-color: white;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .paper {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .paper:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(102,126,234,0.3);
+        }
+
+        .paper h3 {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .paper .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .published {
+            background: #10b981;
+            color: white;
+        }
+
+        .upcoming {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+            font-weight: 600;
+        }
+
+        .download-btn:hover {
+            background: #5568d3;
+            transform: scale(1.05);
+        }
+
+        .bio {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+
+            header {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .paper {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Uncovering Latent Bias in LLM-Based Emergency Department
-Triage Through Proxy Variables</h1>
-    
-    <p>You can view or download the paper here:</p>
-    <a href="Uncovering_Latent_Bias_in_LLM_Based_Emergency_Department_Triage_Through_Proxy_Variables.pdf" target="_blank">
-        Open PDF
-    </a>
+    <div class="container">
+        <header>
+            <h1>Ethan Zhang</h1>
+            <p class="subtitle">11th Grade Student | Palo Alto High School</p>
+            <div class="contact">
+                <a href="mailto:ezuruce@gmail.com">ezuruce@gmail.com</a>
+            </div>
+        </header>
 
-    <hr>
+        <div class="content">
+            <section>
+                <h2>About</h2>
+                <p class="bio">
+                    I'm an 11th-grade student at Palo Alto High School with a strong interest in the safe and responsible use of artificial intelligence in medicine. My research focuses on how AI models can introduce bias in emergency room triage and how we can design and implement AI systems safely to improve accuracy without introducing bias. I hope to apply what I learn in real-world emergency room settings and also teach younger students about the safe and responsible use of AI.
+                </p>
+            </section>
 
-    <h2>Embedded PDF Viewer</h2>
-    <iframe src="Uncovering_Latent_Bias_in_LLM_Based_Emergency_Department_Triage_Through_Proxy_Variables.pdf" 
-            width="100%" height="800px">
-        This browser does not support PDFs. Please download the PDF to view it: 
-        <a href="Uncovering_Latent_Bias_in_LLM_Based_Emergency_Department_Triage_Through_Proxy_Variables.pdf">Download PDF</a>.
-    </iframe>
+            <section>
+                <h2>Research</h2>
+                
+                <div class="paper">
+                    <h3>Uncovering Latent Bias in LLM-Based Emergency Department Triage Through Proxy Variables</h3>
+                    <span class="status published">Published</span>
+                    <a href="Uncovering_Latent_Bias_in_LLM_Based_Emergency_Department_Triage_Through_Proxy_Variables.pdf" class="download-btn" target="_blank">View PDF</a>
+                </div>
 
-    <hr>
+                <div class="paper">
+                    <h3>Exploring Human Bias in Emergency Department Triage</h3>
+                    <span class="status upcoming">Upcoming</span>
+                </div>
 
-    <h2>Upcoming Extensions of This Research</h2>
-    <ul>
-        <li>Exploring Human Bias in Emergency Department Triage</li>
-        <li>Data-Driven Modeling of ED Triage Accuracy: Optimizing Predictions and Analyzing Social Bias</li>
-        <li>Proposed ESI Index Revisions to Improve Accuracy</li>
-    </ul>
+                <div class="paper">
+                    <h3>Predictive Modeling for ED Triage Using Historical Data: Balancing Accuracy and Bias</h3>
+                    <span class="status upcoming">Upcoming</span>
+                </div>
+
+                <div class="paper">
+                    <h3>Proposed Revision to ESI Index: Altering Definitions to Improve Triage Accuracy</h3>
+                    <span class="status upcoming">Upcoming</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>Personal Interests</h2>
+                <p class="bio">
+                    I enjoy playing water polo and practicing karate. In my free time, I love playing games with friends and connecting with people.
+                </p>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Ethan Zhang. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
-
